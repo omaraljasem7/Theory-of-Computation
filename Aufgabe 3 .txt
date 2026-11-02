@@ -1,0 +1,79 @@
+// Aufgabe 3 Biite mit Notepad öffnen 
+
+n ← len(in)
+i ← n−1
+while in[i] ≠ "B"
+	if in[i] = "A"   
+		return true
+	end //zu if 
+ 	−−i
+end // gehört zu while 
+return false
+
+
+Analyse vom Programm :
+
+n ist die Laenge vom String (input ) = in 
+i ist der Index am letzten Position (also i zeigt auf das letzte Zeichen) 
+dann gibt eine Schleife prüft ob das Ziechen an der stelle i ≠ "B" falls das der fall ist, wird die Schleife bearbaietet sonst gibt das Programm false zurück
+in der Schleife gibt es eine if Bedingung, sie prüft ob das zeichen an der stelle i = "A" ist das der Fall gibt das Programm ture zurück, wenn nicht wird i dekrementiert bis "A" gefunden wird 
+ganz wichtig zu beachten : jedes Mal wo i dekrementiert wird, wird die Schelifenbedingung geprüft 
+
+Beispiele für Schelifenbedingung: 
+("B" ≠ "B" also das letzte Zeichen ist "B" die Auswertung ergibt false ) Schleife wird nicht abgearbeitet und gibt ein false zurück 
+("A" ≠ "B" , das letzte Zeichen ist  "A" die Auswertung ergibt true ) Schleife wird abgearbeit 
+("C" ≠  "B", das letzte Zeichen ist "C" die Auswertung ergibt true )  Schleife wird abgearbeitet 
+
+was akzeptiert das Programm also wann ergibt er true ? 
+
+Es akzeptiert alle Strings die aus dem Alphabet Σ = {A, B, C} mit der Eigenschaft der String enthält mind. ein "A" bevor ein "B" gefunden wird. 
+
+
+1. Geben Sie ein Beispiel für einen Eingabestring, den das Programm akzepiert, d.h. für den das
+Programm den Wert true zurückgibt!
+2. Geben Sie ein Beispiel für einen Eingabestring, den das Programm ablehnt, d.h. für den das Programm
+den Wert false zurückgibt!
+3. Geben Sie ein Beispiel für einen Eingabestring, bei dem sich das Programm "aufängt", d.h. für den die
+durch das Programm berechnete Funkon nicht definieert ist!
+4. Schreiben Sie ein Programm in der Programmiersprache Extended Loop, das dieselbe Sprache
+akzepert, wie das oben aufgeführte Extended-While-Programm! Beide Programme sollen also für
+genau dieselben Eingabestrings den Wert true zurückgeben.
+
+
+
+Antwort zu 
+
+1. ist die Eingabe : ABCBA (es wird direkt von hinten ein A gefunden und das Programm gibt true zurück )
+2. die Eingabe ABAB (das Programm trifft direkt auf ein B , Schleife wird nicht abgearbeit und gibt false zurück)
+3. das Programm kann nicht in eine endloseschleife
+ gehen weil der counter i läuft von hinten nach vorn im string und wird bei jeder iteration dekrementiert und daher kann es nicht sein dass die while schleife endlos wird  
+ 
+4. 
+
+n ← len (in) 
+i ← n-1 
+loop i 
+	if in [i] = "B" 
+		return false 
+	end 
+	
+	if in[i] = "A" 
+		return true 
+	end 
+	--i 
+end 
+return false 
+
+
+
+Analyse : 
+n ist die Länge vom input 
+i ist der letzte index 
+schleife läuft n-mal durch den string 
+wenn ein B gefunden wird gibt die Schleife false zurück 
+wenn mind. ein A gefunden wird gibt die Schleife true zurück und in jedem Durchlauf wird i dekrementiert. 
+
+Wir erinnen uns Jedes loop Programm ==> While Programm umgewandelt werden 
+aber nicht umgekehrt 
+aber in diesem Fall lässt sich umwandeln weil das Programm nicht endlos laeuft . 
+
